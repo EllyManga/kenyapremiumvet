@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Kenya Premium Vet | Elite Veterinary Care</title>
+<meta name="description" content="Kenya Premium Vet — Advanced veterinary care for exceptional pet health. Professional diagnostics, surgery, and preventive care in Kenya."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --navy: #0a1628;
+    --navy-mid: #122040;
+    --navy-light: #1b3060;
+    --green: #1a3a2a;
+    --green-mid: #2c5440;
+    --gold: #c9a84c;
+    --gold-light: #e4c97e;
+    --white: #ffffff;
+    --off-white: #f7f6f3;
+    --gray-light: #f0eeea;
+    --gray-mid: #d4d0c8;
+    --gray-text: #6b6860;
+    --text-dark: #0d1f38;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+    --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-sm: 0 2px 12px rgba(10,22,40,0.08);
+    --shadow-md: 0 8px 32px rgba(10,22,40,0.12);
+    --shadow-lg: 0 20px 60px rgba(10,22,40,0.18);
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body { font-family: var(--font-body); color: var(--text-dark); background: var(--white); overflow-x: hidden; }
+
+  img { max-width: 100%; display: block; }
+  a { text-decoration: none; color: inherit; }
+
+  .container { max-width: 1240px; margin: 0 auto; padding: 0 40px; }
+  .container-wide { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
+
+  /* ===== SCROLLBAR ===== */
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: var(--off-white); }
+  ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+
+  /* ===== NAV ===== */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(10, 22, 40, 0.97);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    transition: var(--transition);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 76px;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 12px;
+  }
+  .nav-logo-mark {
+    width: 38px; height: 38px;
+    background: var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+  .nav-logo-mark svg { width: 20px; height: 20px; fill: var(--navy); }
+  .nav-logo-text { display: flex; flex-direction: column; line-height: 1; }
+  .nav-logo-text span:first-child {
+    font-family: var(--font-display); font-size: 1.1rem; font-weight: 700;
+    color: var(--white); letter-spacing: 0.02em;
+  }
+  .nav-logo-text span:last-child {
+    font-size: 0.62rem; letter-spacing: 0.18em; color: var(--gold);
+    text-transform: uppercase; margin-top: 2px;
+  }
+  .nav-links { display: flex; align-items: center; gap: 36px; }
+  .nav-links a {
+    font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(255,255,255,0.72); font-weight: 500;
+    transition: var(--transition); position: relative;
+  }
+  .nav-links a::after {
+    content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px;
+    background: var(--gold); transition: var(--transition);
+  }
+  .nav-links a:hover { color: var(--white); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-cta {
+    background: var(--gold); color: var(--navy) !important;
+    padding: 10px 22px; font-weight: 600 !important;
+    letter-spacing: 0.08em !important; text-transform: uppercase !important;
+    font-size: 0.78rem !important; border: none;
+    transition: var(--transition) !important;
+  }
+  .nav-cta::after { display: none !important; }
+  .nav-cta:hover { background: var(--gold-light) !important; transform: translateY(-1px); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .hamburger span { width: 26px; height: 2px; background: var(--white); transition: var(--transition); display: block; }
+
+  /* ===== HERO ===== */
+  #home {
+    min-height: 100vh; position: relative;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background-image: url('https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?w=1800&q=85&fit=crop');
+    background-size: cover; background-position: center;
+  }
+  .hero-bg::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(10,22,40,0.88) 0%, rgba(26,58,42,0.72) 60%, rgba(10,22,40,0.80) 100%);
+  }
+  .hero-grid-overlay {
+    position: absolute; inset: 0; z-index: 1;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+  .hero-content {
+    position: relative; z-index: 2; text-align: center;
+    padding: 140px 20px 80px; max-width: 860px;
+    animation: heroFadeUp 1.2s cubic-bezier(0.4,0,0.2,1) both;
+  }
+  @keyframes heroFadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.35);
+    color: var(--gold-light); padding: 7px 18px;
+    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 32px; font-weight: 500;
+  }
+  .hero-badge svg { width: 12px; height: 12px; fill: var(--gold-light); }
+  .hero-title {
+    font-family: var(--font-display); font-size: clamp(2.8rem, 6vw, 5.2rem);
+    font-weight: 600; color: var(--white); line-height: 1.1;
+    letter-spacing: -0.01em; margin-bottom: 28px;
+  }
+  .hero-title em { font-style: italic; color: var(--gold-light); }
+  .hero-sub {
+    font-size: 1.05rem; color: rgba(255,255,255,0.68); line-height: 1.75;
+    max-width: 560px; margin: 0 auto 44px; font-weight: 300;
+  }
+  .hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--gold); color: var(--navy); padding: 16px 36px;
+    font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase;
+    font-weight: 600; font-family: var(--font-body);
+    transition: var(--transition); cursor: pointer; border: none;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.3); }
+  .btn-outline {
+    background: transparent; color: var(--white);
+    border: 1px solid rgba(255,255,255,0.35); padding: 16px 36px;
+    font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase;
+    font-weight: 500; font-family: var(--font-body);
+    transition: var(--transition); cursor: pointer;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+  .hero-scroll {
+    position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+    z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 8px;
+    color: rgba(255,255,255,0.4); font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+    animation: scrollPulse 2.5s ease-in-out infinite;
+  }
+  @keyframes scrollPulse { 0%,100%{opacity:0.4;transform:translateX(-50%) translateY(0)} 50%{opacity:0.8;transform:translateX(-50%) translateY(6px)} }
+  .hero-scroll svg { width: 18px; height: 18px; stroke: rgba(255,255,255,0.4); fill: none; }
+
+  /* ===== SECTION LABELS ===== */
+  .section-label {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold); font-weight: 600; margin-bottom: 16px;
+  }
+  .section-label::before {
+    content: ''; width: 32px; height: 1px; background: var(--gold);
+  }
+  .section-title {
+    font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 600; line-height: 1.15; color: var(--text-dark);
+    letter-spacing: -0.01em;
+  }
+  .section-title.light { color: var(--white); }
+  .section-sub {
+    font-size: 1rem; color: var(--gray-text); line-height: 1.8; max-width: 520px;
+    margin-top: 16px; font-weight: 300;
+  }
+  .section-sub.light { color: rgba(255,255,255,0.6); }
+
+  /* ===== SERVICES PREVIEW ===== */
+  #services-preview { padding: 100px 0; background: var(--off-white); }
+  .services-header { margin-bottom: 60px; }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+  }
+  .service-card {
+    background: var(--white); padding: 44px 36px;
+    border-left: 3px solid transparent;
+    transition: var(--transition); position: relative; overflow: hidden;
+  }
+  .service-card::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+    opacity: 0; transition: var(--transition);
+  }
+  .service-card:hover { border-left-color: var(--gold); }
+  .service-card:hover::before { opacity: 1; }
+  .service-card:hover .service-icon { background: rgba(201,168,76,0.15); }
+  .service-card:hover .service-icon svg { stroke: var(--gold-light); }
+  .service-card:hover .service-name { color: var(--white); }
+  .service-card:hover .service-desc { color: rgba(255,255,255,0.6); }
+  .service-icon {
+    width: 52px; height: 52px; background: var(--off-white);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 24px; position: relative; z-index: 1;
+    transition: var(--transition);
+  }
+  .service-icon svg { width: 24px; height: 24px; stroke: var(--navy-light); fill: none; stroke-width: 1.5; transition: var(--transition); }
+  .service-num {
+    position: absolute; top: 20px; right: 28px;
+    font-family: var(--font-display); font-size: 3.5rem; font-weight: 700;
+    color: var(--gray-light); line-height: 1; transition: var(--transition);
+    z-index: 1;
+  }
+  .service-card:hover .service-num { color: rgba(255,255,255,0.06); }
+  .service-name {
+    font-family: var(--font-display); font-size: 1.35rem; font-weight: 600;
+    color: var(--text-dark); margin-bottom: 12px; position: relative; z-index: 1;
+    transition: var(--transition);
+  }
+  .service-desc {
+    font-size: 0.88rem; color: var(--gray-text); line-height: 1.7;
+    position: relative; z-index: 1; transition: var(--transition);
+  }
+
+  /* ===== WHY CHOOSE US ===== */
+  #why {
+    padding: 100px 0;
+    background: var(--navy);
+    position: relative; overflow: hidden;
+  }
+  #why::before {
+    content: ''; position: absolute; right: -200px; top: -200px;
+    width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(26,58,42,0.5) 0%, transparent 70%);
+  }
+  .why-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .why-image { position: relative; }
+  .why-image img {
+    width: 100%; height: 500px; object-fit: cover;
+    filter: brightness(0.85) contrast(1.05);
+  }
+  .why-image::before {
+    content: ''; position: absolute; top: -16px; left: -16px;
+    right: 16px; bottom: 16px;
+    border: 1px solid rgba(201,168,76,0.3); z-index: -1;
+  }
+  .why-image-badge {
+    position: absolute; bottom: -20px; right: -20px;
+    background: var(--gold); padding: 22px 28px; text-align: center;
+  }
+  .why-image-badge .num {
+    font-family: var(--font-display); font-size: 2.4rem; font-weight: 700;
+    color: var(--navy); line-height: 1; display: block;
+  }
+  .why-image-badge .label {
+    font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.15em;
+    color: var(--navy); font-weight: 600; margin-top: 4px; display: block;
+  }
+  .why-features { display: flex; flex-direction: column; gap: 32px; margin-top: 48px; }
+  .why-feature { display: flex; gap: 20px; align-items: flex-start; }
+  .why-feature-icon {
+    width: 44px; height: 44px; flex-shrink: 0;
+    border: 1px solid rgba(201,168,76,0.3);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .why-feature-icon svg { width: 20px; height: 20px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+  .why-feature-text h4 {
+    font-family: var(--font-display); font-size: 1.1rem; font-weight: 600;
+    color: var(--white); margin-bottom: 6px;
+  }
+  .why-feature-text p { font-size: 0.86rem; color: rgba(255,255,255,0.5); line-height: 1.65; }
+
+  /* ===== STATS ===== */
+  #stats {
+    padding: 72px 0; background: var(--white);
+    border-top: 1px solid var(--gray-light); border-bottom: 1px solid var(--gray-light);
+  }
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .stat-item {
+    text-align: center; padding: 48px 32px;
+    border-right: 1px solid var(--gray-light); position: relative;
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num {
+    font-family: var(--font-display); font-size: 3.8rem; font-weight: 700;
+    color: var(--navy); line-height: 1; margin-bottom: 8px;
+  }
+  .stat-num span { color: var(--gold); }
+  .stat-label {
+    font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.16em;
+    color: var(--gray-text); font-weight: 500;
+  }
+  .stat-divider {
+    width: 32px; height: 2px; background: var(--gold);
+    margin: 14px auto; opacity: 0.5;
+  }
+
+  /* ===== TESTIMONIALS ===== */
+  #testimonials { padding: 100px 0; background: var(--gray-light); }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; }
+  .testimonial-card {
+    background: var(--white); padding: 40px 36px;
+    position: relative; border-bottom: 3px solid transparent;
+    transition: var(--transition);
+  }
+  .testimonial-card:hover { border-bottom-color: var(--gold); box-shadow: var(--shadow-md); }
+  .testimonial-quote {
+    font-family: var(--font-display); font-size: 4rem; color: var(--gold);
+    line-height: 0.6; margin-bottom: 20px; font-weight: 700; opacity: 0.4;
+  }
+  .testimonial-text {
+    font-size: 0.95rem; line-height: 1.75; color: var(--gray-text);
+    font-style: italic; margin-bottom: 28px;
+  }
+  .testimonial-stars { display: flex; gap: 4px; margin-bottom: 20px; }
+  .testimonial-stars svg { width: 14px; height: 14px; fill: var(--gold); }
+  .testimonial-author { display: flex; align-items: center; gap: 14px; }
+  .testimonial-avatar {
+    width: 44px; height: 44px; border-radius: 50%; object-fit: cover;
+    filter: grayscale(20%);
+  }
+  .testimonial-name { font-weight: 600; font-size: 0.88rem; color: var(--text-dark); }
+  .testimonial-role { font-size: 0.75rem; color: var(--gray-text); margin-top: 2px; }
+
+  /* ===== ABOUT ===== */
+  #about { padding: 100px 0; background: var(--white); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .about-images { position: relative; height: 560px; }
+  .about-img-main {
+    position: absolute; top: 0; left: 0; width: 78%; height: 430px;
+    object-fit: cover;
+  }
+  .about-img-accent {
+    position: absolute; bottom: 0; right: 0; width: 55%; height: 280px;
+    object-fit: cover; border: 6px solid var(--white);
+  }
+  .about-img-label {
+    position: absolute; top: 40px; right: -20px;
+    background: var(--navy); color: var(--gold);
+    padding: 12px 20px; font-size: 0.68rem; letter-spacing: 0.18em;
+    text-transform: uppercase; font-weight: 600; writing-mode: vertical-lr;
+    transform: rotate(180deg);
+  }
+  .about-content { padding-left: 20px; }
+  .about-body {
+    font-size: 0.95rem; color: var(--gray-text); line-height: 1.85;
+    margin: 24px 0 36px; font-weight: 300;
+  }
+  .about-pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 36px; }
+  .about-pillar {
+    padding: 24px; border: 1px solid var(--gray-light);
+    transition: var(--transition);
+  }
+  .about-pillar:hover { border-color: var(--gold); }
+  .about-pillar h4 { font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--text-dark); margin-bottom: 6px; }
+  .about-pillar p { font-size: 0.8rem; color: var(--gray-text); line-height: 1.65; }
+  .about-pillar-icon { margin-bottom: 12px; }
+  .about-pillar-icon svg { width: 22px; height: 22px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+
+  /* ===== TEAM ===== */
+  #team { padding: 80px 0; background: var(--off-white); }
+  .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 52px; }
+  .team-card { position: relative; overflow: hidden; }
+  .team-img-wrap { overflow: hidden; height: 300px; }
+  .team-img-wrap img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.6s ease; filter: grayscale(20%);
+  }
+  .team-card:hover .team-img-wrap img { transform: scale(1.05); }
+  .team-info { padding: 20px 0 8px; }
+  .team-name { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; color: var(--text-dark); }
+  .team-role { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--gold); margin-top: 4px; }
+  .team-divider { width: 24px; height: 1px; background: var(--gold); margin: 10px 0; }
+
+  /* ===== SERVICES FULL ===== */
+  #services { padding: 100px 0; background: var(--white); }
+  .services-full-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 60px; }
+  .service-full-card {
+    display: grid; grid-template-columns: 80px 1fr;
+    gap: 28px; padding: 36px; border: 1px solid var(--gray-light);
+    transition: var(--transition); align-items: start;
+  }
+  .service-full-card:hover { border-color: var(--navy); box-shadow: var(--shadow-sm); }
+  .service-full-icon-wrap {
+    width: 80px; height: 80px; background: var(--off-white);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; transition: var(--transition);
+  }
+  .service-full-card:hover .service-full-icon-wrap { background: var(--navy); }
+  .service-full-icon-wrap svg { width: 32px; height: 32px; stroke: var(--navy); fill: none; stroke-width: 1.4; transition: var(--transition); }
+  .service-full-card:hover .service-full-icon-wrap svg { stroke: var(--gold); }
+  .service-full-body h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; color: var(--text-dark); margin-bottom: 10px; }
+  .service-full-body p { font-size: 0.88rem; color: var(--gray-text); line-height: 1.7; margin-bottom: 16px; }
+  .service-benefits { list-style: none; display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px; }
+  .service-benefits li {
+    font-size: 0.82rem; color: var(--text-dark);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .service-benefits li svg { width: 14px; height: 14px; stroke: var(--gold); fill: none; stroke-width: 2.5; flex-shrink: 0; }
+  .service-price {
+    font-family: var(--font-display); font-size: 0.8rem;
+    color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase;
+    border-top: 1px solid var(--gray-light); padding-top: 14px; margin-top: 8px;
+  }
+  .service-cta-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--navy); font-weight: 600; transition: var(--transition);
+    margin-top: 12px;
+  }
+  .service-cta-link svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; transition: var(--transition); }
+  .service-cta-link:hover { color: var(--gold); }
+  .service-cta-link:hover svg { transform: translateX(4px); }
+
+  /* ===== BOOKING ===== */
+  #booking {
+    padding: 100px 0;
+    background: var(--navy);
+    position: relative; overflow: hidden;
+  }
+  #booking::after {
+    content: ''; position: absolute; left: -300px; bottom: -300px;
+    width: 700px; height: 700px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(26,58,42,0.4) 0%, transparent 70%);
+  }
+  .booking-inner { display: grid; grid-template-columns: 1fr 1.3fr; gap: 80px; align-items: start; }
+  .booking-info { position: relative; z-index: 1; }
+  .booking-info .section-label { color: var(--gold-light); }
+  .booking-info .section-label::before { background: var(--gold-light); }
+  .booking-points { margin-top: 40px; display: flex; flex-direction: column; gap: 24px; }
+  .booking-point { display: flex; gap: 16px; align-items: flex-start; }
+  .booking-point-dot {
+    width: 8px; height: 8px; background: var(--gold); flex-shrink: 0; margin-top: 6px;
+  }
+  .booking-point h4 { font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--white); margin-bottom: 4px; }
+  .booking-point p { font-size: 0.84rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+  .booking-form { background: var(--white); padding: 48px; position: relative; z-index: 1; }
+  .form-title {
+    font-family: var(--font-display); font-size: 1.5rem; font-weight: 600;
+    color: var(--text-dark); margin-bottom: 32px;
+    padding-bottom: 16px; border-bottom: 1px solid var(--gray-light);
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-group { margin-bottom: 20px; }
+  .form-group label {
+    display: block; font-size: 0.72rem; text-transform: uppercase;
+    letter-spacing: 0.14em; color: var(--text-dark); font-weight: 600; margin-bottom: 8px;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%; padding: 13px 16px;
+    border: 1px solid var(--gray-mid); background: var(--off-white);
+    font-family: var(--font-body); font-size: 0.9rem; color: var(--text-dark);
+    outline: none; transition: var(--transition); border-radius: 0;
+    appearance: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--navy); background: var(--white);
+    box-shadow: 0 0 0 3px rgba(10,22,40,0.06);
+  }
+  .form-group textarea { min-height: 110px; resize: vertical; }
+  .form-submit {
+    width: 100%; padding: 16px; background: var(--navy);
+    color: var(--white); font-family: var(--font-body); font-size: 0.82rem;
+    letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600;
+    border: none; cursor: pointer; transition: var(--transition);
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    margin-top: 8px;
+  }
+  .form-submit svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; }
+  .form-submit:hover { background: var(--gold); color: var(--navy); }
+
+  /* ===== CONTACT ===== */
+  #contact { padding: 80px 0; background: var(--off-white); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; margin-top: 56px; }
+  .contact-item {
+    padding: 44px 40px; border-right: 1px solid var(--gray-mid);
+    transition: var(--transition);
+  }
+  .contact-item:last-child { border-right: none; }
+  .contact-item:hover { background: var(--white); }
+  .contact-icon {
+    width: 50px; height: 50px; background: var(--navy);
+    display: flex; align-items: center; justify-content: center; margin-bottom: 20px;
+  }
+  .contact-icon svg { width: 22px; height: 22px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+  .contact-label {
+    font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.2em;
+    color: var(--gold); font-weight: 600; margin-bottom: 10px;
+  }
+  .contact-value { font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; color: var(--text-dark); line-height: 1.5; }
+  .contact-sub { font-size: 0.8rem; color: var(--gray-text); margin-top: 6px; }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--text-dark); padding: 72px 0 0;
+    color: rgba(255,255,255,0.55);
+  }
+  .footer-inner {
+    display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 48px;
+    padding-bottom: 56px; border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-logo-wrap { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .footer-logo-mark {
+    width: 32px; height: 32px; background: var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+  .footer-logo-mark svg { width: 16px; height: 16px; fill: var(--navy); }
+  .footer-logo-text { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--white); }
+  .footer-desc { font-size: 0.84rem; line-height: 1.75; max-width: 280px; }
+  .footer-social { display: flex; gap: 12px; margin-top: 28px; }
+  .footer-social a {
+    width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.15);
+    display: flex; align-items: center; justify-content: center;
+    transition: var(--transition);
+  }
+  .footer-social a:hover { border-color: var(--gold); background: rgba(201,168,76,0.1); }
+  .footer-social svg { width: 16px; height: 16px; stroke: rgba(255,255,255,0.6); fill: none; stroke-width: 1.5; transition: var(--transition); }
+  .footer-social a:hover svg { stroke: var(--gold); }
+  .footer-col h5 {
+    font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.18em;
+    color: var(--white); font-weight: 600; margin-bottom: 20px;
+    padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col ul a { font-size: 0.84rem; transition: var(--transition); }
+  .footer-col ul a:hover { color: var(--gold-light); }
+  .footer-bottom {
+    padding: 24px 0; display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 12px; font-size: 0.78rem;
+  }
+  .footer-bottom a { color: var(--gold-light); }
+  .footer-bottom a:hover { text-decoration: underline; }
+
+  /* ===== REVEAL ANIMATIONS ===== */
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  /* ===== MOBILE ===== */
+  @media(max-width: 1024px) {
+    .container { padding: 0 24px; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-inner { grid-template-columns: 1fr; gap: 48px; }
+    .why-image { display: none; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .stat-item { border-bottom: 1px solid var(--gray-light); }
+    .testimonials-grid { grid-template-columns: 1fr 1fr; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-images { display: none; }
+    .about-content { padding-left: 0; }
+    .team-grid { grid-template-columns: repeat(2, 1fr); }
+    .services-full-grid { grid-template-columns: 1fr; }
+    .booking-inner { grid-template-columns: 1fr; gap: 48px; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .contact-item { border-right: none; border-bottom: 1px solid var(--gray-mid); }
+    .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+  }
+  @media(max-width: 768px) {
+    .nav-links { display: none; flex-direction: column; position: fixed; top: 76px; left: 0; right: 0; background: var(--navy); padding: 32px; gap: 20px; }
+    .nav-links.open { display: flex; }
+    .hamburger { display: flex; }
+    .hero-actions { flex-direction: column; align-items: center; }
+    .services-grid { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .team-grid { grid-template-columns: 1fr 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .booking-form { padding: 28px 20px; }
+    .stat-item { border-right: none; }
+    .footer-inner { grid-template-columns: 1fr; }
+    .about-pillars { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav id="mainNav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">
+        <div class="nav-logo-mark">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C9 5 4 7 4 12c0 4.4 3.6 8 8 8s8-3.6 8-8c0-5-5-7-8-10z"/>
+          </svg>
+        </div>
+        <div class="nav-logo-text">
+          <span>Kenya Premium Vet</span>
+          <span>Elite Veterinary Care</span>
+        </div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#booking" class="nav-cta">Book Now</a>
+      </div>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
+      Kenya's Premier Veterinary Service
+    </div>
+    <h1 class="hero-title">Premium Veterinary Care<br/>for <em>Exceptional</em> Pet Health</h1>
+    <p class="hero-sub">Advanced diagnostics, world-class surgical expertise, and personalized preventive care — delivered with the precision and standards your pet deserves.</p>
+    <div class="hero-actions">
+      <a href="#booking" class="btn-primary">
+        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Book Appointment
+      </a>
+      <a href="#contact" class="btn-outline">
+        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.7 11.5a19.79 19.79 0 01-3.07-8.67A2 2 0 013.62 0.8h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 8.37a16 16 0 006.06 6.06l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Contact Clinic
+      </a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+    Scroll
+  </div>
+</section>
+
+<!-- ===== SERVICES PREVIEW ===== -->
+<section id="services-preview">
+  <div class="container">
+    <div class="services-header reveal">
+      <div class="section-label">What We Offer</div>
+      <h2 class="section-title">Comprehensive Care.<br/>Uncompromising Standards.</h2>
+      <p class="section-sub">Every service at Kenya Premium Vet is delivered with clinical precision and a commitment to your pet's long-term wellbeing.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-num">01</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <div class="service-name">Advanced Diagnostics</div>
+        <div class="service-desc">State-of-the-art imaging, laboratory analysis, and precision testing to uncover and address conditions at the earliest stage.</div>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-num">02</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="service-name">Preventive Care</div>
+        <div class="service-desc">Structured wellness programs, vaccinations, and nutritional guidance designed to keep your pet in optimal health year-round.</div>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-num">03</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <div class="service-name">Surgical Excellence</div>
+        <div class="service-desc">Minimally invasive and complex surgical procedures performed by board-certified surgeons in fully equipped operating theaters.</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-num">04</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <div class="service-name">Emergency Services</div>
+        <div class="service-desc">Round-the-clock critical care with dedicated emergency teams trained for rapid, decisive action in acute situations.</div>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-num">05</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M5 7c0-1.1.9-2 2-2h10a2 2 0 012 2v12H5V7z"/></svg>
+        </div>
+        <div class="service-name">Dental Care</div>
+        <div class="service-desc">Professional dental hygiene, extractions, and oral health assessments to prevent systemic disease arising from dental neglect.</div>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-num">06</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+        </div>
+        <div class="service-name">Specialized Treatments</div>
+        <div class="service-desc">Oncology, dermatology, orthopedics, and internal medicine consultations for complex cases requiring specialist expertise.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY CHOOSE US ===== -->
+<section id="why">
+  <div class="container">
+    <div class="why-inner">
+      <div class="why-image reveal">
+        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&q=85&fit=crop" alt="Veterinary Professional"/>
+        <div class="why-image-badge">
+          <span class="num">15+</span>
+          <span class="label">Years of Excellence</span>
+        </div>
+      </div>
+      <div class="why-content">
+        <div class="section-label" style="color:var(--gold-light)">
+          <span style="width:32px;height:1px;background:var(--gold-light);display:block"></span>
+          Our Difference
+        </div>
+        <h2 class="section-title light reveal">Why Choose<br/><em style="font-style:italic;color:var(--gold-light)">Kenya Premium Vet</em></h2>
+        <p class="section-sub light reveal">We have built our practice on a foundation of clinical rigor, compassionate care, and a relentless commitment to excellence that sets us apart.</p>
+        <div class="why-features">
+          <div class="why-feature reveal">
+            <div class="why-feature-icon">
+              <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <div class="why-feature-text">
+              <h4>Highly Qualified Veterinarians</h4>
+              <p>Our team includes specialists with international training and board certifications across multiple disciplines.</p>
+            </div>
+          </div>
+          <div class="why-feature reveal reveal-delay-1">
+            <div class="why-feature-icon">
+              <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <div class="why-feature-text">
+              <h4>Modern Medical Equipment</h4>
+              <p>Digital radiology, ultrasound, endoscopy, and in-house laboratory systems for comprehensive diagnostics.</p>
+            </div>
+          </div>
+          <div class="why-feature reveal reveal-delay-2">
+            <div class="why-feature-icon">
+              <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div class="why-feature-text">
+              <h4>Precision Diagnostics</h4>
+              <p>Multi-stage diagnostic protocols ensuring accuracy, minimizing uncertainty, and optimizing treatment outcomes.</p>
+            </div>
+          </div>
+          <div class="why-feature reveal reveal-delay-3">
+            <div class="why-feature-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            </div>
+            <div class="why-feature-text">
+              <h4>Trusted Care Standards</h4>
+              <p>Our protocols align with international veterinary standards, ensuring your pet receives care of the highest caliber.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section id="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <div class="stat-num"><span id="stat1">0</span><span>+</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat-label">Satisfied Clients</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-1">
+        <div class="stat-num"><span id="stat2">0</span><span>+</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat-label">Years of Experience</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-2">
+        <div class="stat-num"><span id="stat3">0</span><span>%</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat-label">Successful Treatments</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-3">
+        <div class="stat-num"><span id="stat4">0</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat-label">Specialist Disciplines</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-label reveal">Client Testimonials</div>
+    <h2 class="section-title reveal">Trusted by Pet Owners<br/>Across Kenya</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-quote">"</div>
+        <div class="testimonial-stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testimonial-text">The level of professionalism at Kenya Premium Vet is unlike anything I've experienced. They diagnosed a complex condition in my Labrador that two other clinics had missed entirely.</p>
+        <div class="testimonial-author">
+          <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=80&h=80&q=80&fit=crop" alt="Client"/>
+          <div>
+            <div class="testimonial-name">Amara Njoroge</div>
+            <div class="testimonial-role">Nairobi, Kenya</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="testimonial-quote">"</div>
+        <div class="testimonial-stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testimonial-text">Their surgical team is exceptional. My cat needed a complicated procedure and the outcome was remarkable. The post-operative care and follow-up was equally impressive.</p>
+        <div class="testimonial-author">
+          <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&q=80&fit=crop" alt="Client"/>
+          <div>
+            <div class="testimonial-name">David Kimani</div>
+            <div class="testimonial-role">Karen, Nairobi</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="testimonial-quote">"</div>
+        <div class="testimonial-stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testimonial-text">As a breeder, I need a vet I can trust absolutely. Kenya Premium Vet's preventive care programs have maintained the health of my entire kennel for three years running.</p>
+        <div class="testimonial-author">
+          <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&q=80&fit=crop" alt="Client"/>
+          <div>
+            <div class="testimonial-name">Sarah Mwangi</div>
+            <div class="testimonial-role">Westlands, Nairobi</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-images reveal">
+        <img class="about-img-main" src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=700&q=85&fit=crop" alt="Veterinary Clinic"/>
+        <img class="about-img-accent" src="https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=500&q=85&fit=crop" alt="Pet Care"/>
+        <div class="about-img-label">Est. 2009</div>
+      </div>
+      <div class="about-content">
+        <div class="section-label">About Our Clinic</div>
+        <h2 class="section-title reveal">A Practice Built on<br/>Clinical Excellence</h2>
+        <p class="about-body reveal">Kenya Premium Vet was founded with a singular purpose: to deliver veterinary care that meets and exceeds international standards — right here in Kenya. Over 15 years, we have built a reputation built on rigorous diagnostics, surgical precision, and an unwavering commitment to animal welfare.</p>
+        <p class="about-body reveal" style="margin-top:-16px">Our mission is to provide elite veterinary services accessible to Kenya's most discerning pet owners, and our vision is to set the benchmark for veterinary medicine across East Africa.</p>
+        <div class="about-pillars">
+          <div class="about-pillar reveal">
+            <div class="about-pillar-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+            <h4>Our Mission</h4>
+            <p>To deliver elite veterinary care with clinical precision and compassion, setting the gold standard in Kenya.</p>
+          </div>
+          <div class="about-pillar reveal reveal-delay-1">
+            <div class="about-pillar-icon"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+            <h4>Our Vision</h4>
+            <p>To be the reference practice for advanced veterinary medicine across East Africa by 2030.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TEAM ===== -->
+<section id="team">
+  <div class="container">
+    <div class="section-label reveal">The Medical Team</div>
+    <h2 class="section-title reveal">Specialists You Can Trust</h2>
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <div class="team-img-wrap">
+          <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=400&h=400&q=80&fit=crop" alt="Dr. James Ochieng"/>
+        </div>
+        <div class="team-info">
+          <div class="team-name">Dr. James Ochieng</div>
+          <div class="team-divider"></div>
+          <div class="team-role">Chief Veterinary Officer</div>
+        </div>
+      </div>
+      <div class="team-card reveal reveal-delay-1">
+        <div class="team-img-wrap">
+          <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&q=80&fit=crop" alt="Dr. Fatuma Hassan"/>
+        </div>
+        <div class="team-info">
+          <div class="team-name">Dr. Fatuma Hassan</div>
+          <div class="team-divider"></div>
+          <div class="team-role">Surgical Specialist</div>
+        </div>
+      </div>
+      <div class="team-card reveal reveal-delay-2">
+        <div class="team-img-wrap">
+          <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&q=80&fit=crop" alt="Dr. Brian Mutua"/>
+        </div>
+        <div class="team-info">
+          <div class="team-name">Dr. Brian Mutua</div>
+          <div class="team-divider"></div>
+          <div class="team-role">Internal Medicine</div>
+        </div>
+      </div>
+      <div class="team-card reveal reveal-delay-3">
+        <div class="team-img-wrap">
+          <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&h=400&q=80&fit=crop" alt="Dr. Aisha Waweru"/>
+        </div>
+        <div class="team-info">
+          <div class="team-name">Dr. Aisha Waweru</div>
+          <div class="team-divider"></div>
+          <div class="team-role">Diagnostic Imaging</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES FULL ===== -->
+<section id="services">
+  <div class="container">
+    <div class="section-label reveal">Full Service Range</div>
+    <h2 class="section-title reveal">Every Aspect of<br/>Veterinary Medicine</h2>
+    <p class="section-sub reveal">Comprehensive care pathways, from wellness to complex interventions, all under one world-class roof.</p>
+    <div class="services-full-grid">
+
+      <div class="service-full-card reveal">
+        <div class="service-full-icon-wrap">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="service-full-body">
+          <h3>Preventive Care</h3>
+          <p>Proactive health management to safeguard your pet's wellbeing across every life stage, from puppy or kitten through to senior care.</p>
+          <ul class="service-benefits">
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Annual wellness examinations</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Vaccination scheduling & records</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Parasite prevention protocols</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Nutrition & weight management</li>
+          </ul>
+          <div class="service-price">From KES 3,500 per consultation</div>
+          <a href="#booking" class="service-cta-link">Schedule Appointment <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+
+      <div class="service-full-card reveal reveal-delay-1">
+        <div class="service-full-icon-wrap">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <div class="service-full-body">
+          <h3>Advanced Diagnostics</h3>
+          <p>Our in-house diagnostic suite delivers rapid, accurate results — eliminating guesswork and accelerating treatment decisions.</p>
+          <ul class="service-benefits">
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Digital X-ray & ultrasound</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Complete blood panels</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Urinalysis & cytology</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> ECG & cardiac evaluation</li>
+          </ul>
+          <div class="service-price">From KES 5,000 per diagnostic panel</div>
+          <a href="#booking" class="service-cta-link">Schedule Appointment <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+
+      <div class="service-full-card reveal">
+        <div class="service-full-icon-wrap">
+          <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <div class="service-full-body">
+          <h3>Surgical Services</h3>
+          <p>Routine to complex surgical interventions performed in fully equipped theaters, with comprehensive anesthetic monitoring and post-operative care.</p>
+          <ul class="service-benefits">
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Soft tissue & orthopedic surgery</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Laparoscopic procedures</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Spay, neuter & reproductive</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Wound repair & reconstruction</li>
+          </ul>
+          <div class="service-price">From KES 15,000 per procedure</div>
+          <a href="#booking" class="service-cta-link">Schedule Appointment <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+
+      <div class="service-full-card reveal reveal-delay-1">
+        <div class="service-full-icon-wrap">
+          <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <div class="service-full-body">
+          <h3>Emergency Services</h3>
+          <p>24/7 critical care availability with a dedicated emergency team trained for triage, trauma, and acute medical crises.</p>
+          <ul class="service-benefits">
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> 24-hour emergency line</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Intensive care unit (ICU)</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Trauma & toxin management</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Oxygen therapy & fluid support</li>
+          </ul>
+          <div class="service-price">Emergency consultation from KES 7,500</div>
+          <a href="#booking" class="service-cta-link">Schedule Appointment <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+
+      <div class="service-full-card reveal">
+        <div class="service-full-icon-wrap">
+          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M5 7c0-1.1.9-2 2-2h10a2 2 0 012 2v12H5V7z"/></svg>
+        </div>
+        <div class="service-full-body">
+          <h3>Dental Care</h3>
+          <p>Comprehensive oral health programs to prevent dental disease, infection, and systemic complications arising from poor oral hygiene.</p>
+          <ul class="service-benefits">
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Professional dental scaling</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Oral health assessments</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Extractions & oral surgery</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Home dental care guidance</li>
+          </ul>
+          <div class="service-price">From KES 8,000 per dental procedure</div>
+          <a href="#booking" class="service-cta-link">Schedule Appointment <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+
+      <div class="service-full-card reveal reveal-delay-1">
+        <div class="service-full-icon-wrap">
+          <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+        </div>
+        <div class="service-full-body">
+          <h3>Specialized Treatments</h3>
+          <p>Advanced specialist consultations and treatment pathways for complex conditions requiring subspecialty expertise.</p>
+          <ul class="service-benefits">
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Oncology & chemotherapy</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Dermatology & allergy</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Orthopedic rehabilitation</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Ophthalmology & neurology</li>
+          </ul>
+          <div class="service-price">Specialist consultation from KES 9,000</div>
+          <a href="#booking" class="service-cta-link">Schedule Appointment <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== BOOKING ===== -->
+<section id="booking">
+  <div class="container">
+    <div class="booking-inner">
+      <div class="booking-info">
+        <div class="section-label">Book a Visit</div>
+        <h2 class="section-title light reveal">Schedule Your<br/><em style="font-style:italic;color:var(--gold-light)">Appointment</em></h2>
+        <p class="section-sub light reveal">Our team will confirm your appointment within 2 hours and prepare fully for your pet's visit.</p>
+        <div class="booking-points">
+          <div class="booking-point reveal">
+            <div class="booking-point-dot"></div>
+            <div>
+              <h4>Prompt Confirmation</h4>
+              <p>Receive appointment confirmation and preparation instructions within 2 hours of submission.</p>
+            </div>
+          </div>
+          <div class="booking-point reveal reveal-delay-1">
+            <div class="booking-point-dot"></div>
+            <div>
+              <h4>Specialist Matching</h4>
+              <p>We assign the most qualified veterinarian for your pet's specific condition and needs.</p>
+            </div>
+          </div>
+          <div class="booking-point reveal reveal-delay-2">
+            <div class="booking-point-dot"></div>
+            <div>
+              <h4>Pre-Visit Preparation</h4>
+              <p>Your pet's profile is reviewed before arrival so your appointment begins without delay.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="booking-form reveal">
+        <div class="form-title">Appointment Request</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" placeholder="Your full name"/>
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="+254 700 000 000"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="your@email.com"/>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Pet Type</label>
+            <select>
+              <option value="">Select pet type</option>
+              <option>Dog</option>
+              <option>Cat</option>
+              <option>Bird</option>
+              <option>Rabbit</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Service Required</label>
+            <select>
+              <option value="">Select service</option>
+              <option>Preventive Care</option>
+              <option>Advanced Diagnostics</option>
+              <option>Surgery</option>
+              <option>Emergency</option>
+              <option>Dental Care</option>
+              <option>Specialized Treatment</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Preferred Date</label>
+          <input type="date"/>
+        </div>
+        <div class="form-group">
+          <label>Additional Notes</label>
+          <textarea placeholder="Please describe your pet's condition or any additional information we should know..."></textarea>
+        </div>
+        <button class="form-submit" onclick="alert('Thank you. Your appointment request has been received. We will confirm within 2 hours.')">
+          <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Submit Appointment Request
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+  <div class="container">
+    <div class="section-label reveal">Get In Touch</div>
+    <h2 class="section-title reveal">Visit Our Clinic</h2>
+    <div class="contact-grid">
+      <div class="contact-item reveal">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="contact-label">Our Address</div>
+        <div class="contact-value">Westlands Square<br/>3rd Floor, Suite 302<br/>Nairobi, Kenya</div>
+        <div class="contact-sub">Ample parking available on-site</div>
+      </div>
+      <div class="contact-item reveal reveal-delay-1">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.7 11.5a19.79 19.79 0 01-3.07-8.67A2 2 0 013.62 0.8h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 8.37a16 16 0 006.06 6.06l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <div class="contact-label">Phone & Email</div>
+        <div class="contact-value">+254 700 000 000</div>
+        <div class="contact-sub" style="margin-top:8px">info@kenyapremiumvet.co.ke</div>
+        <div class="contact-sub">Emergency: +254 700 000 001</div>
+      </div>
+      <div class="contact-item reveal reveal-delay-2">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="contact-label">Working Hours</div>
+        <div class="contact-value">Mon – Fri: 8:00 AM – 7:00 PM</div>
+        <div class="contact-sub" style="margin-top:8px">Saturday: 9:00 AM – 5:00 PM</div>
+        <div class="contact-sub">Sunday: 10:00 AM – 2:00 PM</div>
+        <div class="contact-sub" style="color:var(--gold);font-weight:600;margin-top:10px">Emergency: 24 Hours, 7 Days</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo-wrap">
+          <div class="footer-logo-mark">
+            <svg viewBox="0 0 24 24" fill="var(--navy)"><path d="M12 2C9 5 4 7 4 12c0 4.4 3.6 8 8 8s8-3.6 8-8c0-5-5-7-8-10z"/></svg>
+          </div>
+          <div class="footer-logo-text">Kenya Premium Vet</div>
+        </div>
+        <p class="footer-desc">Elite veterinary care delivered with precision, compassion, and an unwavering commitment to clinical excellence in Kenya.</p>
+        <div class="footer-social">
+          <a href="#" title="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" title="Instagram">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" title="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" title="Twitter">
+            <svg viewBox="0 0 24 24"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#team">Our Team</a></li>
+          <li><a href="#booking">Book Appointment</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services">Preventive Care</a></li>
+          <li><a href="#services">Diagnostics</a></li>
+          <li><a href="#services">Surgery</a></li>
+          <li><a href="#services">Emergency Care</a></li>
+          <li><a href="#services">Dental Care</a></li>
+          <li><a href="#services">Specialist Treatments</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:+254700000000">+254 700 000 000</a></li>
+          <li><a href="mailto:info@kenyapremiumvet.co.ke">info@kenyapremiumvet.co.ke</a></li>
+          <li><a href="#">Westlands Square, Nairobi</a></li>
+          <li><a href="#">Emergency: 24/7</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 Kenya Premium Vet. All rights reserved.</span>
+      <span>Powered by <a href="https://madshaqdigitalpr.com" target="_blank">Madshaq Digital PR</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ===== HAMBURGER =====
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+
+  // ===== SCROLL REVEAL =====
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  // ===== COUNTER ANIMATION =====
+  const statTargets = [1000, 15, 97, 12];
+  const statSuffixes = ['', '', '', ''];
+  const statEls = ['stat1','stat2','stat3','stat4'];
+  let counted = false;
+
+  function animateCounters() {
+    if (counted) return;
+    counted = true;
+    statEls.forEach((id, i) => {
+      const el = document.getElementById(id);
+      const target = statTargets[i];
+      const duration = 2000;
+      const step = target / (duration / 16);
+      let current = 0;
+      const timer = setInterval(() => {
+        current = Math.min(current + step, target);
+        el.textContent = Math.floor(current).toLocaleString();
+        if (current >= target) clearInterval(timer);
+      }, 16);
+    });
+  }
+
+  const statsSection = document.getElementById('stats');
+  const statsObserver = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) animateCounters();
+  }, { threshold: 0.3 });
+  statsObserver.observe(statsSection);
+
+  // ===== NAV SCROLL EFFECT =====
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('mainNav');
+    if (window.scrollY > 60) {
+      nav.style.borderBottomColor = 'rgba(201,168,76,0.25)';
+    } else {
+      nav.style.borderBottomColor = 'rgba(201,168,76,0.15)';
+    }
+  });
+
+  // ===== CLOSE NAV ON LINK CLICK =====
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
+</script>
+</body>
+</html>
